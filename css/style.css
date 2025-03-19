@@ -14,43 +14,158 @@
   --gray-color: #86868b;
   --light-gray: #f2f2f2;
 
+  /* Cores para cursos */
+  --curso-basico: #4caf50;
+  --curso-intermediario: #2196f3;
+  --curso-avancado: #ff9800;
+  --curso-expert: #f44336;
+  --bg-dark: #1a1a1a;
+  --card-dark: #2d2d2d;
+  --text-light: #f5f5f5;
+  --text-gray: #b0b0b0;
+
   /* Espaçamentos */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
-  --spacing-xl: 8rem;
-
-  /* Bordas */
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 16px;
-
-  /* Sombras */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-
-  /* Transições */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
 }
 
-/* Tamanho base de fonte para o documento inteiro */
 html {
-  font-size: 18px; /* Aumentando de 16px (padrão) para 18px */
+  scroll-behavior: smooth;
+  font-size: 15px; /* Reduzido de 16px para 15px */
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   color: var(--dark-color);
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 p {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1rem; /* Reduzido de 1.1rem para 1rem */
+  line-height: 1.6;
+}
+
+/* Ajuste de outros elementos */
+.section-header h2 {
+  font-size: 2.2rem; /* Reduzido de 2.5rem para 2.2rem */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-header p {
+  font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
+  color: var(--gray-color);
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+/* Ajustes para títulos em Hero section */
+.hero-content h1 {
+  font-size: 3.2rem; /* Reduzido de 3.5rem para 3.2rem */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+  position: relative;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem; /* Reduzido de 1.8rem para 1.5rem */
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+/* Ajustes para cards e items */
+.destaque-card h4 {
+  font-size: 1.2rem; /* Reduzido de 1.4rem para 1.2rem */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.destaque-card p {
+  font-size: 0.95rem; /* Reduzido de 1rem para 0.95rem */
+  color: var(--gray-color);
+}
+
+/* Ajustes para menu */
+nav ul li a {
+  color: var(--dark-color);
+  text-decoration: none;
+  font-size: 1rem; /* Reduzido de 1.1rem para 1rem */
+  font-weight: 500;
+  padding: 8px 12px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Ajustes para responsividade */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px; /* Reduzido de 15px para 14px */
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem; /* Reduzido de 3rem para 2.8rem */
+  }
+
+  .hero-content h2 {
+    font-size: 1.3rem; /* Reduzido de 1.5rem para 1.3rem */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px; /* Reduzido de 14px para 13px */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem; /* Reduzido de 2.8rem para 2.5rem */
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem; /* Reduzido de 1.4rem para 1.2rem */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 12px; /* Reduzido de 13px para 12px */
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem; /* Reduzido de 2.5rem para 2.2rem */
+  }
+}
+
+/* Redução de tamanhos para botões */
+.btn-primary,
+.btn-outline {
+  padding: 12px 25px; /* Reduzido de 15px 30px para 12px 25px */
+  font-size: 0.95rem; /* Reduzido de 1.1rem para 0.95rem */
+}
+
+.btn-text {
+  font-size: 0.95rem; /* Reduzido de 1.1rem para 0.95rem */
+}
+
+.btn-whatsapp {
+  font-size: 1.3rem; /* Reduzido de 1.5rem para 1.3rem */
+  padding: 15px 30px; /* Reduzido de 18px 36px para 15px 30px */
+}
+
+.btn-whatsapp-small {
+  font-size: 0.9rem; /* Reduzido de 1rem para 0.9rem */
+  padding: 10px 20px; /* Reduzido de 12px 24px para 10px 20px */
 }
 
 /* Container */
@@ -2897,4 +3012,299 @@ footer {
 .footer-social {
   display: flex;
   gap: 15px;
+}
+
+/* Tema escuro para página de cursos */
+.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.dark-theme .section {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.dark-theme .section-header h2 {
+  color: var(--text-light);
+}
+
+.dark-theme .section-header p {
+  color: var(--text-gray);
+}
+
+.dark-theme .section-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("https://images.unsplash.com/photo-1614308457932-e16d933b73b2?q=80&w=2070&auto=format&fit=crop")
+      no-repeat center center;
+}
+
+.dark-theme .intro-text p {
+  color: var(--text-gray);
+}
+
+.dark-theme .feature-text h3 {
+  color: var(--text-light);
+}
+
+.dark-theme .feature-text p {
+  color: var(--text-gray);
+}
+
+.dark-theme .feature-icon {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--primary-color-light);
+}
+
+.dark-theme .feature-item:hover .feature-icon {
+  background-color: var(--primary-color);
+}
+
+/* Ajustes para os níveis de cursos */
+.dark-theme .nivel-card {
+  background-color: var(--card-dark);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .nivel-header {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .nivel-content p {
+  color: var(--text-gray);
+}
+
+.dark-theme .nivel-content ul li {
+  color: var(--text-gray);
+}
+
+.dark-theme .nivel-info .info-item {
+  color: var(--text-gray);
+}
+
+/* Ajustes para fabricantes */
+.dark-theme .fabricante-section {
+  background-color: var(--card-dark);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .fabricante-header {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .fabricante-header h3 {
+  color: var(--text-light);
+}
+
+.dark-theme .fabricante-content p {
+  color: var(--text-gray);
+}
+
+.dark-theme .fabricante-logo {
+  background-color: #232323;
+}
+
+/* Ajustes para os cursos */
+.dark-theme .curso-box {
+  background-color: #232323;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .curso-box h4 {
+  color: var(--text-light);
+}
+
+.dark-theme .curso-box ul li {
+  color: var(--text-gray);
+}
+
+/* Preços dos cursos */
+.curso-preco {
+  margin: 15px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.curso-preco .valor {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.curso-preco .parcela {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* Botões para os cursos */
+.btn-curso-basico {
+  background-color: rgba(76, 175, 80, 0.7);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-curso-intermediario {
+  background-color: rgba(33, 150, 243, 0.8);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-curso-avancado {
+  background-color: rgba(255, 152, 0, 0.8);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-curso-expert {
+  background-color: rgba(244, 67, 54, 0.8);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-curso-basico:hover {
+  background-color: #4caf50;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-curso-intermediario:hover {
+  background-color: #2196f3;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+.btn-curso-avancado:hover {
+  background-color: #ff9800;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+
+.btn-curso-expert:hover {
+  background-color: #f44336;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+}
+
+/* Estilo para cartões de depoimentos */
+.dark-theme .depoimento-card {
+  background-color: var(--card-dark);
+}
+
+.dark-theme .depoimento-card p {
+  color: var(--text-gray);
+}
+
+.dark-theme .aluno-info h4 {
+  color: var(--text-light);
+}
+
+.dark-theme .aluno-info span {
+  color: var(--text-gray);
+}
+
+/* Estilo para seção de inscrições */
+.dark-theme .inscricoes-content {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .inscricoes-cta .btn-primary {
+  background-color: #ff9800;
+  color: white;
+}
+
+.dark-theme .inscricoes-cta .btn-primary:hover {
+  background-color: #f57c00;
+  box-shadow: 0 10px 20px rgba(255, 152, 0, 0.3);
+}
+
+/* Newsletter em modo escuro */
+.dark-theme .newsletter-content {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .newsletter-form button {
+  background-color: #2196f3;
+}
+
+.dark-theme .newsletter-form button:hover {
+  background-color: #1976d2;
+}
+
+/* Footer em modo escuro */
+.dark-theme footer {
+  background-color: #121212;
+}
+
+.dark-theme .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Selo de oferta */
+.selo-oferta {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transform: rotate(10deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.selo-oferta::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5px 5px 0;
+  border-color: transparent #b71c1c transparent transparent;
 }
