@@ -24,18 +24,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
 
   if (menuMobile) {
-    // Garantir que os ícones são adicionados inicialmente
+    // Garantir que os ícones estão presentes
     if (!menuMobile.querySelector(".menu-icon")) {
-      menuMobile.innerHTML =
-        '<i class="fas fa-bars menu-icon"></i><i class="fas fa-times close-icon"></i>';
+      const menuIcon = document.createElement("i");
+      menuIcon.className = "fas fa-bars menu-icon";
+      menuMobile.appendChild(menuIcon);
     }
 
-    menuMobile.addEventListener("click", function (e) {
-      e.stopPropagation(); // Evitar propagação do clique
-      nav.classList.toggle("active");
-      menuMobile.classList.toggle("active");
+    if (!menuMobile.querySelector(".close-icon")) {
+      const closeIcon = document.createElement("i");
+      closeIcon.className = "fas fa-times close-icon";
+      menuMobile.appendChild(closeIcon);
+    }
 
-      // Impede rolagem do body quando menu está aberto em dispositivos móveis
+    // Adicionar event listener para o botão de menu
+    menuMobile.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      menuMobile.classList.toggle("active");
+      nav.classList.toggle("active");
+
       if (nav.classList.contains("active")) {
         body.classList.add("menu-open");
         body.style.overflow = "hidden";
@@ -45,12 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Fecha o menu ao clicar fora dele
-    document.addEventListener("click", function (event) {
+    // Fechar o menu ao clicar fora dele
+    document.addEventListener("click", function (e) {
       if (
         nav.classList.contains("active") &&
-        !nav.contains(event.target) &&
-        !menuMobile.contains(event.target)
+        !nav.contains(e.target) &&
+        !menuMobile.contains(e.target)
       ) {
         nav.classList.remove("active");
         menuMobile.classList.remove("active");
@@ -59,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Impedir propagação dentro do nav para não fechar o menu ao clicar nele
+    // Evitar que cliques dentro do nav fechem o menu
     nav.addEventListener("click", function (e) {
       e.stopPropagation();
     });
 
-    // Adicionar evento de clique para os links do menu fecharem o menu depois de clicados
+    // Fechar o menu ao clicar em um link
     const navLinks = document.querySelectorAll("nav ul li a");
     navLinks.forEach((link) => {
       link.addEventListener("click", function () {
