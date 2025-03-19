@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Menu Mobile - Versão Simplificada
+  // Menu Mobile
   const menuMobile = document.querySelector(".menu-mobile");
   const nav = document.querySelector("nav");
   const body = document.body;
@@ -37,8 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
       menuMobile.appendChild(closeIcon);
     }
 
-    // Manipulador de clique simplificado
-    menuMobile.addEventListener("click", function () {
+    // Adicionar event listener para o botão de menu
+    menuMobile.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
       menuMobile.classList.toggle("active");
       nav.classList.toggle("active");
 
@@ -51,12 +54,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Fechar menu ao clicar nos links
-    const navLinks = document.querySelectorAll("nav ul li a");
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        menuMobile.classList.remove("active");
+    // Fechar o menu ao clicar fora dele
+    document.addEventListener("click", function (e) {
+      if (
+        nav.classList.contains("active") &&
+        !nav.contains(e.target) &&
+        !menuMobile.contains(e.target)
+      ) {
         nav.classList.remove("active");
+        menuMobile.classList.remove("active");
+        body.classList.remove("menu-open");
+        body.style.overflow = "";
+      }
+    });
+
+    // Evitar que cliques dentro do nav fechem o menu
+    nav.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+    // Fechar o menu ao clicar em um link
+    const navLinks = document.querySelectorAll("nav ul li a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        nav.classList.remove("active");
+        menuMobile.classList.remove("active");
         body.classList.remove("menu-open");
         body.style.overflow = "";
       });
@@ -412,16 +434,7 @@ function setupHeroSlider() {
 
 // Form Validation
 function setupFormValidation() {
-  const formContato = document.getElementById("formContato");
   const formNewsletter = document.getElementById("formNewsletter");
-
-  if (formContato) {
-    formContato.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-      formContato.reset();
-    });
-  }
 
   if (formNewsletter) {
     formNewsletter.addEventListener("submit", function (e) {
