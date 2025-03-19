@@ -24,14 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
 
   if (menuMobile) {
-    menuMobile.addEventListener("click", function () {
+    // Garantir que os ícones são adicionados inicialmente
+    if (!menuMobile.querySelector(".menu-icon")) {
+      menuMobile.innerHTML =
+        '<i class="fas fa-bars menu-icon"></i><i class="fas fa-times close-icon"></i>';
+    }
+
+    menuMobile.addEventListener("click", function (e) {
+      e.stopPropagation(); // Evitar propagação do clique
       nav.classList.toggle("active");
       menuMobile.classList.toggle("active");
 
       // Impede rolagem do body quando menu está aberto em dispositivos móveis
       if (nav.classList.contains("active")) {
+        body.classList.add("menu-open");
         body.style.overflow = "hidden";
       } else {
+        body.classList.remove("menu-open");
         body.style.overflow = "";
       }
     });
@@ -45,13 +54,26 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         nav.classList.remove("active");
         menuMobile.classList.remove("active");
+        body.classList.remove("menu-open");
         body.style.overflow = "";
       }
     });
 
-    // Adiciona ícone de hambúrguer e X para melhor UX
-    menuMobile.innerHTML =
-      '<i class="fas fa-bars menu-icon"></i><i class="fas fa-times close-icon"></i>';
+    // Impedir propagação dentro do nav para não fechar o menu ao clicar nele
+    nav.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+    // Adicionar evento de clique para os links do menu fecharem o menu depois de clicados
+    const navLinks = document.querySelectorAll("nav ul li a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        nav.classList.remove("active");
+        menuMobile.classList.remove("active");
+        body.classList.remove("menu-open");
+        body.style.overflow = "";
+      });
+    });
   }
 
   // Inicializa Particles.js
