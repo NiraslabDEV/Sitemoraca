@@ -24,6 +24,9 @@
 
     <!-- AOS - Animate On Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Particles.js para efeitos visuais -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
   <body>
     <!-- Cabeçalho -->
@@ -31,7 +34,7 @@
       <div class="container">
         <div class="logo">
           <a href="index.html">
-            <h1>MORACA</h1>
+            <img src="img/logo.png" alt="Logo Moraca" />
           </a>
         </div>
         <nav>
@@ -39,6 +42,7 @@
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#marcas">Marcas</a></li>
             <li><a href="#clientes">Clientes</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contato">Contato</a></li>
@@ -52,66 +56,84 @@
 
     <!-- Hero Section -->
     <section id="hero">
-      <div class="container">
-        <div class="hero-content" data-aos="fade-up">
-          <h2>Excelência em Manutenção de Equipamentos Radiológicos</h2>
-          <p>
-            Há 30 anos oferecendo soluções completas em manutenção preventiva e
-            corretiva para equipamentos de Raio-X.
-          </p>
-          <div class="hero-buttons">
-            <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
-            <a href="https://wa.me/5511982597955" class="btn-whatsapp">
-              <i class="fab fa-whatsapp"></i> Fale Conosco
-            </a>
-          </div>
+      <div id="particles-js"></div>
+      <div class="hero-slider"></div>
+      <div class="hero-content">
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          A maior referência em manutenção de <span>Raio-X</span>
+        </h1>
+        <h2 data-aos="fade-up" data-aos-delay="200">
+          Solucionamos problemas que ninguém consegue resolver
+        </h2>
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+          <a href="#sobre" class="btn btn-primary">Conheça a Moraca</a>
+          <a href="#contato" class="btn btn-outline">Solicite um orçamento</a>
         </div>
-      </div>
-      <div class="hero-slider">
-        <!-- Slides serão inseridos via JavaScript -->
+        <!-- As estatísticas serão adicionadas aqui pelo JavaScript -->
       </div>
     </section>
 
     <!-- Sobre Nós -->
-    <section id="sobre" class="section-padding">
+    <section id="sobre" class="section">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
+        <div class="section-header">
           <h2>Sobre Nós</h2>
-          <p>Conheça a trajetória de 30 anos da Moraca LTDA</p>
+          <div class="section-line"></div>
         </div>
         <div class="sobre-content">
-          <div class="sobre-text" data-aos="fade-right">
-            <p>
-              A 30 anos neste mercado, nosso trabalho consiste em solucionar
-              problemas na manutenção periódica e na comercialização de
-              equipamentos radiológicos médico-hospitalares.
-            </p>
-            <p>
-              Oferecemos assessoria, dando suporte técnico às entidades que
-              operam nesta área e simplificando a vida de médicos e operadores
-              de equipamentos, que garantem a eficiência dos serviços médicos,
-              úteis a todos nós.
-            </p>
-            <p>
-              Somos ultra especializados em manutenção de Raio-X com foco
-              especial na marca Ziehm. Nossa reputação nos torna a maior
-              referência em São Paulo e no Brasil, sendo procurados quando
-              ninguém mais consegue resolver problemas complexos.
-            </p>
+          <div class="sobre-text">
+            <!-- O conteúdo aqui será substituído pelo JavaScript para criar as abas -->
           </div>
-          <div class="sobre-image" data-aos="fade-left">
-            <!-- Imagem representativa da empresa -->
-            <img src="img/sobre-moraca.jpg" alt="Equipe Moraca" />
+          <div class="sobre-img">
+            <img
+              src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1470&auto=format&fit=crop"
+              alt="Equipamento de Raio-X"
+            />
+          </div>
+        </div>
+
+        <div class="destaques-section">
+          <h3>Números que nos Destacam</h3>
+          <div class="destaques-grid">
+            <div class="destaque-card">
+              <span class="destaque-numero" data-count="30">0</span>
+              <h4>Anos de Experiência</h4>
+              <p>
+                Três décadas de excelência em manutenção de equipamentos médicos
+              </p>
+            </div>
+            <div class="destaque-card">
+              <span class="destaque-numero" data-count="1500">0</span>
+              <h4>Equipamentos Atendidos</h4>
+              <p>
+                Instalações e manutenções em equipamentos de diagnóstico por
+                imagem
+              </p>
+            </div>
+            <div class="destaque-card">
+              <span class="destaque-numero" data-count="300">0</span>
+              <h4>Hospitais Parceiros</h4>
+              <p>
+                Instituições que confiam em nossa expertise técnica e
+                atendimento
+              </p>
+            </div>
+            <div class="destaque-card">
+              <span class="destaque-numero" data-count="24">0</span>
+              <h4>Atendimento em Horas</h4>
+              <p>Tempo médio de resposta para atendimentos emergenciais</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Serviços -->
-    <section id="servicos" class="section-padding bg-light">
+    <section id="servicos" class="section bg-light">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2>Nossos Serviços</h2>
+          <div class="section-line"></div>
           <p>Soluções completas para seus equipamentos radiológicos</p>
         </div>
         <div class="servicos-grid">
@@ -204,16 +226,17 @@
     </section>
 
     <!-- Produtos -->
-    <section id="produtos" class="section-padding">
+    <section id="produtos" class="section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2>Produtos</h2>
+          <div class="section-line"></div>
           <p>Equipamentos que oferecemos manutenção especializada</p>
         </div>
         <div class="produtos-grid">
           <div class="produto-card" data-aos="fade-up" data-aos-delay="100">
             <div class="produto-img">
-              <img src="img/mini-arco.jpg" alt="Mini Arco Cirúrgico" />
+              <img src="img/produtos/min-arco.png" alt="Mini Arco Cirúrgico" />
             </div>
             <div class="produto-info">
               <h3>Mini Arco Cirúrgico</h3>
@@ -226,7 +249,10 @@
           </div>
           <div class="produto-card" data-aos="fade-up" data-aos-delay="200">
             <div class="produto-img">
-              <img src="img/raio-x-fixo.jpg" alt="Raio-X Fixo" />
+              <img
+                src="https://images.unsplash.com/photo-1516069677018-378515003435?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3"
+                alt="Raio-X Fixo"
+              />
             </div>
             <div class="produto-info">
               <h3>Raio-X Fixo</h3>
@@ -239,7 +265,7 @@
           </div>
           <div class="produto-card" data-aos="fade-up" data-aos-delay="300">
             <div class="produto-img">
-              <img src="img/arco-cirurgico.jpg" alt="Arco Cirúrgico" />
+              <img src="img/produtos/arco-cirugico.png" alt="Arco Cirúrgico" />
             </div>
             <div class="produto-info">
               <h3>Arco Cirúrgico</h3>
@@ -253,7 +279,7 @@
           <div class="produto-card" data-aos="fade-up" data-aos-delay="400">
             <div class="produto-img">
               <img
-                src="img/raio-x-transportavel.jpg"
+                src="https://images.unsplash.com/photo-1579154341098-e4e158cc7f55?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3"
                 alt="Raio-X Transportável"
               />
             </div>
@@ -268,7 +294,10 @@
           </div>
           <div class="produto-card" data-aos="fade-up" data-aos-delay="500">
             <div class="produto-img">
-              <img src="img/raio-x-portatil.jpg" alt="Raio-X Portátil" />
+              <img
+                src="https://images.unsplash.com/photo-1583911860205-ba7fda2918a8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3"
+                alt="Raio-X Portátil"
+              />
             </div>
             <div class="produto-info">
               <h3>Raio-X Portátil</h3>
@@ -283,11 +312,160 @@
       </div>
     </section>
 
+    <!-- Marcas Parceiras -->
+    <section id="marcas" class="section bg-dark">
+      <div class="container">
+        <div class="section-header light" data-aos="fade-up">
+          <h2>Marcas que Atendemos</h2>
+          <div class="section-line"></div>
+          <p>Experiência técnica nas principais marcas do mercado</p>
+        </div>
+
+        <div class="marcas-destaque">
+          <p class="marcas-intro" data-aos="fade-up">
+            A Moraca LTDA possui expertise técnica especializada nos
+            equipamentos das principais fabricantes mundiais de tecnologia
+            radiológica. Nossa equipe é capacitada para solucionar problemas
+            complexos que outros não conseguem resolver.
+          </p>
+
+          <div class="marcas-grid" data-aos="fade-up">
+            <div class="marca-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="marca-img">
+                <img src="img/Marcas/logo-ziehm.png" alt="Ziehm Imaging" />
+              </div>
+              <div class="marca-info">
+                <h3>Ziehm Imaging</h3>
+                <p>
+                  Referência mundial em tecnologia e inovação em arcos
+                  cirúrgicos
+                </p>
+              </div>
+            </div>
+
+            <div class="marca-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="marca-img">
+                <img src="img/Marcas/GE-logo.jpg" alt="GE Healthcare" />
+              </div>
+              <div class="marca-info">
+                <h3>GE Healthcare</h3>
+                <p>
+                  Líder em equipamentos médicos e arcos cirúrgicos de alta
+                  performance
+                </p>
+              </div>
+            </div>
+
+            <div class="marca-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="marca-img">
+                <img
+                  src="img/Marcas/siemens-logo.png"
+                  alt="Siemens Healthineers"
+                />
+              </div>
+              <div class="marca-info">
+                <h3>Siemens Healthineers</h3>
+                <p>
+                  Reconhecida pela qualidade e confiabilidade dos seus
+                  equipamentos
+                </p>
+              </div>
+            </div>
+
+            <div class="marca-card" data-aos="zoom-in" data-aos-delay="400">
+              <div class="marca-img">
+                <img
+                  src="img/Marcas/philips-logo.png"
+                  alt="Philips Healthcare"
+                />
+              </div>
+              <div class="marca-info">
+                <h3>Philips Healthcare</h3>
+                <p>
+                  Equipamentos com excelente qualidade de imagem e eficiência
+                </p>
+              </div>
+            </div>
+
+            <div class="marca-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="marca-img">
+                <img src="img/Marcas/shimadzu-logo.avif" alt="Shimadzu" />
+              </div>
+              <div class="marca-info">
+                <h3>Shimadzu</h3>
+                <p>
+                  Marca japonesa conhecida pela precisão e durabilidade de seus
+                  equipamentos
+                </p>
+              </div>
+            </div>
+
+            <div class="marca-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="marca-img">
+                <img
+                  src="img/Marcas/canon-logo.png"
+                  alt="Canon Medical (Toshiba)"
+                />
+              </div>
+              <div class="marca-info">
+                <h3>Canon Medical (Toshiba)</h3>
+                <p>
+                  Presença forte no setor de radiologia com equipamentos de
+                  ponta
+                </p>
+              </div>
+            </div>
+
+            <div class="marca-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="marca-img">
+                <img src="img/Marcas/orthoscanlogo.png" alt="OrthoScan" />
+              </div>
+              <div class="marca-info">
+                <h3>OrthoScan</h3>
+                <p>
+                  Especializada em mini arcos cirúrgicos para procedimentos
+                  ortopédicos
+                </p>
+              </div>
+            </div>
+
+            <div class="marca-card" data-aos="zoom-in" data-aos-delay="400">
+              <div class="marca-img">
+                <img src="img/Marcas/hologic-logo.png" alt="Hologic" />
+              </div>
+              <div class="marca-info">
+                <h3>Hologic</h3>
+                <p>
+                  Focada em equipamentos de imagem para procedimentos médicos de
+                  alta precisão
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="marcas-cta" data-aos="fade-up">
+            <h3>Precisa de suporte técnico especializado?</h3>
+            <p>
+              Nossa equipe está preparada para solucionar os problemas mais
+              complexos em equipamentos de radiologia.
+            </p>
+            <a
+              href="https://wa.me/5511982597955?text=Olá,%20preciso%20de%20suporte%20técnico%20especializado%20para%20equipamento%20de%20radiologia"
+              class="btn-primary"
+            >
+              <i class="fab fa-whatsapp"></i> Entre em contato
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Clientes -->
-    <section id="clientes" class="section-padding bg-light">
+    <section id="clientes" class="section bg-light">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2>Nossos Clientes</h2>
+          <div class="section-line"></div>
           <p>Confiança e qualidade reconhecidas pelo mercado</p>
         </div>
         <div class="clientes-grid" data-aos="fade-up" data-aos-delay="100">
@@ -335,17 +513,18 @@
     </section>
 
     <!-- Blog -->
-    <section id="blog" class="section-padding">
+    <section id="blog" class="section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2>Blog</h2>
+          <div class="section-line"></div>
           <p>Fique por dentro das novidades</p>
         </div>
         <div class="blog-grid">
           <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
             <div class="blog-img">
               <img
-                src="img/blog-1.jpg"
+                src="https://images.unsplash.com/photo-1612277492380-5e4b6341b7a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3"
                 alt="Inovações em Equipamentos de Raio-X"
               />
             </div>
@@ -361,7 +540,10 @@
           </div>
           <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
             <div class="blog-img">
-              <img src="img/blog-2.jpg" alt="Manutenção Preventiva" />
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Manutenção Preventiva"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">28 Fevereiro, 2024</div>
@@ -378,7 +560,10 @@
           </div>
           <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
             <div class="blog-img">
-              <img src="img/blog-3.jpg" alt="Arcos Cirúrgicos" />
+              <img
+                src="https://images.unsplash.com/photo-1631563019676-daa0a9748afa?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3"
+                alt="Arcos Cirúrgicos"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">10 Fevereiro, 2024</div>
@@ -395,10 +580,11 @@
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="section-padding bg-dark">
+    <section id="contato" class="section bg-dark">
       <div class="container">
         <div class="section-header light" data-aos="fade-up">
           <h2>Contato</h2>
+          <div class="section-line"></div>
           <p>Entre em contato conosco</p>
         </div>
         <div class="contato-grid">
@@ -494,7 +680,7 @@
     </section>
 
     <!-- Newsletter -->
-    <section id="newsletter" class="section-padding-sm">
+    <section id="newsletter" class="section">
       <div class="container">
         <div class="newsletter-content" data-aos="fade-up">
           <h3>Fique por dentro das novidades!</h3>
@@ -515,7 +701,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <h2>MORACA</h2>
+            <img src="img/logo.png" alt="Logo Moraca" class="logo-footer" />
             <p>
               Especialistas em manutenção de equipamentos radiológicos há 30
               anos.
@@ -527,6 +713,7 @@
               <li><a href="#sobre">Sobre</a></li>
               <li><a href="#servicos">Serviços</a></li>
               <li><a href="#produtos">Produtos</a></li>
+              <li><a href="#marcas">Marcas</a></li>
               <li><a href="#clientes">Clientes</a></li>
               <li><a href="#blog">Blog</a></li>
               <li><a href="#contato">Contato</a></li>
