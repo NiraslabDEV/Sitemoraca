@@ -454,15 +454,15 @@ function setupSmoothScroll() {
 
   links.forEach((link) => {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
+        e.preventDefault();
 
       // Fecha o menu mobile se estiver aberto
-      const nav = document.querySelector("nav");
+          const nav = document.querySelector("nav");
       const menuMobile = document.querySelector(".menu-mobile");
       const body = document.body;
 
-      if (nav.classList.contains("active")) {
-        nav.classList.remove("active");
+          if (nav.classList.contains("active")) {
+            nav.classList.remove("active");
         menuMobile.classList.remove("active");
         body.style.overflow = "";
       }
@@ -475,17 +475,17 @@ function setupSmoothScroll() {
 
       if (targetElement) {
         // Posição do elemento em relação ao topo da página
-        const headerHeight = document.querySelector("header").offsetHeight;
-        const targetPosition =
-          targetElement.getBoundingClientRect().top +
-          window.pageYOffset -
-          headerHeight;
+          const headerHeight = document.querySelector("header").offsetHeight;
+          const targetPosition =
+            targetElement.getBoundingClientRect().top +
+            window.pageYOffset -
+            headerHeight;
 
         // Animação de scroll suave
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
       }
     });
   });
